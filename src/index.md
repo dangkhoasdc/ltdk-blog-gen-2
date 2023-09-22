@@ -1,7 +1,7 @@
 ---
 layout: base.njk
-title: Eleventy Web Starter - Eleventy, esbuild, Tailwind and PostCSS
-description: Eleventy Web Starter is a lightweight Eleventy boilerplate utilising esbuild, Tailwind CSS and Post CSS
+title: Le Tan Dang Khoa Homepage
+description: Le Tan Dang Khoa Homepage
 ---
 
 Le Tan Dang Khoa
