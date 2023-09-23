@@ -10,6 +10,7 @@
             </style>
         {% else %}
             <link rel="stylesheet" href="/static/styles.min.css">
+            <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/water.css@2/out/light.css">
         {% endif %}
 
         <!-- Try and serve Google Fonts in the most efficent way possible -->
@@ -20,7 +21,6 @@
         </noscript>
     </head>
     <body>
-        <a href="#main" class="skip-link">Skip to main content</a>
         <main class="p-12">
           <h1 class="text-3xl mb-8">{{title}}</h1>
           {{ content | safe }}
