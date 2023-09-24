@@ -6,6 +6,9 @@ description: Le Tan Dang Khoa Homepage
 
 ## Interests
 
+- [Vector Search](https://github.com/dangkhoasdc/awesome-vector-database)
+- [The Art of Computer Programming](https://github.com/dangkhoasdc/taocp)
+
 ## Posts
 
 ## Contact
