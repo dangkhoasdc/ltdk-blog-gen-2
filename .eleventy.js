@@ -1,6 +1,8 @@
 const filters = require('./utils/filters.js')
 const transforms = require('./utils/transforms.js')
 const collections = require('./utils/collections.js')
+const markdownItFootnote = require("markdown-it-footnote")
+const markdownItHeaderSections = require("markdown-it-header-sections")
 
 module.exports = function (eleventyConfig) {
 	// Folders to copy to build dir (See. 1.1)
@@ -23,6 +25,14 @@ module.exports = function (eleventyConfig) {
 
 	// This allows Eleventy to watch for file changes during local development.
 	eleventyConfig.setUseGitIgnore(false);
+
+  // Plugins for markdown-it
+  eleventyConfig.amendLibrary(
+    "md",
+    mdLib => mdLib
+      .use(markdownItHeaderSections)
+      .use(markdownItFootnote)
+  )
 
 	return {
 		dir: {
