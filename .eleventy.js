@@ -3,12 +3,14 @@ const transforms = require('./utils/transforms.js')
 const collections = require('./utils/collections.js')
 const markdownItFootnote = require("markdown-it-footnote")
 const markdownItHeaderSections = require("markdown-it-header-sections")
+const markdownItAnchor = require("markdown-it-anchor")
+const markdownItTOCDoneRight = require("markdown-it-toc-done-right")
 
 module.exports = function (eleventyConfig) {
 	// Folders to copy to build dir (See. 1.1)
 	eleventyConfig.addPassthroughCopy("src/static");
 
-	// Filters 
+	// Filters
 	Object.keys(filters).forEach((filterName) => {
 		eleventyConfig.addFilter(filterName, filters[filterName])
 	})
@@ -32,6 +34,8 @@ module.exports = function (eleventyConfig) {
     mdLib => mdLib
       .use(markdownItHeaderSections)
       .use(markdownItFootnote)
+			.use(markdownItAnchor, {permalink: true, permalinkBefore: true, permalinkSymbol: '§'})
+			.use(markdownItTOCDoneRight)
   )
 
 	return {

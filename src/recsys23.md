@@ -3,6 +3,9 @@ layout: base.njk
 title: (vi) Tóm tắt hội nghị RecSys-23
 ---
 
+${toc}
+
+
 ## Tóm tắt
 Dưới đây là toàn bộ điểm nhấn mà mình lĩnh hội được sau 5 ngày tham dự [RecSys 23](https://recsys.acm.org/recsys23/) diễn ra tại Singapore.
 - Các ông lớn đang xây dựng hệ thống nền tảng cho hệ thống gợi ý: từ Google, Meta, Amazon đến Netflix.
@@ -18,7 +21,7 @@ Lúc sau thì mình chạy sang phần tutorial chủ đề [Recommender in the 
 
 Tính tranh thủ xem [FashionXrecsys](https://fashionxrecsys.github.io/fashionxrecsys-2023/) nhưng không có thời gian.
 
-[^5]: Multi-modality - mình không biết dịch sao luôn. 
+[^5]: Multi-modality - mình không biết dịch sao luôn.
 ## Ngày 2
 Hôm nay mình xem được vài keynotes tại 2 workshops: ORSUM2023, CONSEQUENCES và VideoRecSys.
 
@@ -26,7 +29,7 @@ Hôm nay mình xem được vài keynotes tại 2 workshops: ORSUM2023, CONSEQUE
 
 > Sequential recommender: Ví dụ trong giỏ hàng bạn có bánh phở, thịt bò, xương ống thì hệ thống sẽ đoán là bạn đang chuẩn bị làm phở nên sẽ gợi ý bạn mua thêm hành, chanh, gừng hay các nguyên liệu khác để chế biến, cho dù bạn có chế biến với các nguyên liệu đó hay không là 1 chuyện khác 🤣
 
-> Session-based recommender: thông tin cho huyến luyện và dự đoán là phiên người dùng ẩn danh, không có lịch sử truy cập của từng account. 
+> Session-based recommender: thông tin cho huyến luyện và dự đoán là phiên người dùng ẩn danh, không có lịch sử truy cập của từng account.
 
 Những phần thuyết trình còn lại lần lượt đến từ Youtube Research, Instagram và Netflix rải rác ở workshop [CONSEQUENCES](https://www.youtube.com/watch?v=WRRnsZfcQ9g&ab_channel=CONSEQUENCESRecSysWorkshop) và [VideoRecsys](https://videorecsys.com/). Theo mình thì ngoại trừ bài của Youtube ra thì cả Instagram và Netflix chất lượng không cao, không tập trung vào vấn đề nào cụ thể. Tuy nhiên vẫn có vài mẫu thông tin hữu ích:
 - Youtube trước kia tập trung phát triển mô hình để thu hút người xem. Giờ đây trong mô hình của họ cũng tối ưu cho người kiến tạo nội dung. Mình nghĩ với sự cạnh tranh từ Tiktok, đây là điều không tránh khỏi. Youtube cần tối ưu hệ thống sao cho các Youtuber cảm thấy nội dung của họ thực sự được người xem quan tâm và hứng thú, đồng thời giữ chân các Youtuber ở lại nền tảng của mình.
@@ -34,7 +37,7 @@ Những phần thuyết trình còn lại lần lượt đến từ Youtube Rese
 - Trang "Khám Phá" của [Youtube đã bắt đầu sử dụng LLM để cải thiện embedding](https://arxiv.org/pdf/2305.15498.pdf) của tập huấn luyện. Đồng thời chủ đề gợi ý cũng sử dụng LLM để làm giàu bộ corpus.
 - Netflix phát triển riêng từng mô hình cho mỗi quốc gia. Điều này khá tốn kém. Theo quan sát của họ, những thị trường mới này dần dần sẽ có kết quả tương đồng với mô hình của thị trường cũ, nên để tiết kiệm chi phí duy trì và phát hành, họ sẽ gộp các mô hình lại.
 - Instagram đang bắt đầu phát triển một kỹ thuật mới: [Semantic ID(s)](https://videorecsys.com/slides/thomas_talk1.pdf).
-- Mặc dù là **video**recsys, cả 3 ông lớn (Microsoft, Netflix, Meta) không hề đề cập bất cứ kỹ thuật, vấn đề nào khi làm việc với dữ liệu ảnh hay video. Hơi thất vọng vì mình đã kì vọng nhiều hơn từ những bài đến từ các nhóm này. 
+- Mặc dù là **video**recsys, cả 3 ông lớn (Microsoft, Netflix, Meta) không hề đề cập bất cứ kỹ thuật, vấn đề nào khi làm việc với dữ liệu ảnh hay video. Hơi thất vọng vì mình đã kì vọng nhiều hơn từ những bài đến từ các nhóm này.
 
 [^1]: Phía bên phải màn hình.
 [^2]: quảng cáo có thể ảnh hưởng tiêu cực đến trải nghiệm xem của người dùng, dẫn đến sự không hài lòng khi trải nghiệm hệ thống gợi ý
@@ -62,7 +65,7 @@ Mình dự phiên trình bày [Knowledge & Context](https://recsys.acm.org/recsy
 - [Pairwise Intent Graph Embedding Learning for Context-Aware Recommendation](https://dl.acm.org/doi/10.1145/3604915.3608815)
 - [Heterogeneous Knowledge Fusion: A Novel Approach for Personalized Recommendation via LLM](https://dl.acm.org/doi/10.1145/3604915.3608874)
 - [How Should We Measure Filter Bubbles? A Regression Model and Evidence for Online News](https://dl.acm.org/doi/10.1145/3604915.3608805)
-- [Everyone’s a Winner! On Hyperparameter Tuning of Recommendation Models](https://dl.acm.org/doi/10.1145/3604915.3609488) 
+- [Everyone’s a Winner! On Hyperparameter Tuning of Recommendation Models](https://dl.acm.org/doi/10.1145/3604915.3609488)
 - [What We Evaluate When We Evaluate Recommender Systems: Understanding Recommender Systems’ Performance using Item Response Theory](https://dl.acm.org/doi/10.1145/3604915.3608809)
 - [Identifying Controversial Pairs in Item-to-Item Recommendations](https://dl.acm.org/doi/10.1145/3604915.3608871)
 ## Ngày 5
