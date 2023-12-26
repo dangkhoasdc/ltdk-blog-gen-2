@@ -16,7 +16,7 @@ description: Le Tan Dang Khoa Homepage
 
 ## Misc
 
-- 📖 [Goodread](https://www.goodreads.com/user/show/23367014-dang-khoa-le-tan)
+- 📖 [Goodread](https://www.goodreads.com/user/show/23367014-dang-khoa-le-tan) / [Tracking](https://trello.com/b/vcIzCSFj)
 - 🎮 [Steam](https://steamcommunity.com/profiles/76561198324160552/)
 
 #### Status
