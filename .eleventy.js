@@ -38,6 +38,8 @@ module.exports = function (eleventyConfig) {
 			.use(markdownItTOCDoneRight)
   )
 
+	eleventyConfig.addPassthroughCopy("src/lora/");
+
 	return {
 		dir: {
 			input: "src/",
