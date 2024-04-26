@@ -1,304 +1,87 @@
 <!DOCTYPE html>
-<html lang="en">
+<html class="writer-html5" lang="en" >
 <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><link rel="canonical" href="https://ltdk.me/lora/bsc/" />
+      <link rel="shortcut icon" href="../img/favicon.ico" />
+    <title>Binary Search - Leetcode Practices</title>
+    <link rel="stylesheet" href="../css/theme.css" />
+    <link rel="stylesheet" href="../css/theme_extra.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" />
+        <link href="../assets/_mkdocstrings.css" rel="stylesheet" />
     
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <meta name="generator" content="mkdocs-1.5.3, mkdocs-terminal-4.4.0">
-     
-     
+      <script>
+        // Current page data
+        var mkdocs_page_name = "Binary Search";
+        var mkdocs_page_input_path = "bsc.md";
+        var mkdocs_page_url = "/lora/bsc/";
+      </script>
     
-    <link rel="canonical" href="https://ltdk.me/lora/bsc/"><link rel="icon" type="image/png" sizes="192x192" href="../img/android-chrome-192x192.png" />
-<link rel="icon" type="image/png" sizes="512x512" href="../img/android-chrome-512x512.png" />
-<link rel="apple-touch-icon" sizes="180x180" href="../img/apple-touch-icon.png" />
-<link rel="shortcut icon" type="image/png" sizes="48x48" href="../img/favicon.ico" />
-<link rel="icon" type="image/png" sizes="16x16" href="../img/favicon-16x16.png" />
-<link rel="icon" type="image/png" sizes="32x32" href="../img/favicon-32x32.png" />
-
-
-    
- 
-<title>Binary Search - Leetcode Practices</title>
-
-
-<link href="../css/fontawesome/css/fontawesome.min.css" rel="stylesheet">
-<link href="../css/fontawesome/css/solid.min.css" rel="stylesheet">
-<link href="../css/normalize.css" rel="stylesheet">
-<link href="../css/terminal.css" rel="stylesheet">
-<link href="../css/theme.css" rel="stylesheet">
-<link href="../css/theme.tile_grid.css" rel="stylesheet">
-<link href="../css/theme.footer.css" rel="stylesheet">
-<!-- default color palette -->
-<link href="../css/palettes/default.css" rel="stylesheet">
-
-<!-- page layout -->
-<style>
-/* initially set page layout to a one column grid */
-.terminal-mkdocs-main-grid {
-    display: grid;
-    grid-column-gap: 1.4em;
-    grid-template-columns: auto;
-    grid-template-rows: auto;
-}
-
-/*  
-*   when side navigation is not hidden, use a two column grid.  
-*   if the screen is too narrow, fall back to the initial one column grid layout.
-*   in this case the main content will be placed under the navigation panel. 
-*/
-@media only screen and (min-width: 70em) {
-    .terminal-mkdocs-main-grid {
-        grid-template-columns: 4fr 9fr;
-    }
-}</style>
-
-
-
-    
-    <link href="../assets/_mkdocstrings.css" rel="stylesheet">  
-    
-    
-
-    
-    
-    
-    
-    
-
-    
+    <!--[if lt IE 9]>
+      <script src="../js/html5shiv.min.js"></script>
+    <![endif]-->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+      <script>hljs.highlightAll();</script> 
 </head>
 
-<body class="terminal"><div class="container">
-    <div class="terminal-nav">
-        <header class="terminal-logo">
-            <div id="mkdocs-terminal-site-name" class="logo terminal-prompt"><a href="https://ltdk.me/lora/" class="no-style">Leetcode Practices</a></div>
-        </header>
-        
-        <nav class="terminal-menu">
-            
-            <ul vocab="https://schema.org/" typeof="BreadcrumbList">
-                
-                
-                <li property="itemListElement" typeof="ListItem">
-                    <a href="../docs/index.md" class="menu-item " property="item" typeof="WebPage">
-                        <span property="name">Home</span>
-                    </a>
-                    <meta property="position" content="0">
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+          <a href=".." class="icon icon-home"> Leetcode Practices
+        </a>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="..">Home</a>
                 </li>
-                
-                
-                <li property="itemListElement" typeof="ListItem">
-                    <a href="https://ltdk.me" class="menu-item " property="item" typeof="WebPage">
-                        <span property="name">My Blog</span>
-                    </a>
-                    <meta property="position" content="1">
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="" href="https://ltdk.me">My Blog</a>
                 </li>
-                
-                
-                
-                
-                
-                    
-                    
-                    
-            </ul>
-            
-        </nav>
+              </ul>
+              <p class="caption"><span class="caption-text">Basic</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../arrays/">Arrays</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../llists/">Linked Lists</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../stacks/">Stacks</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Misc</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../journey/">Journey</a>
+                  </li>
+              </ul>
+      </div>
     </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+      <nav class="wy-nav-top" role="navigation" aria-label="Mobile navigation menu">
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="..">Leetcode Practices</a>
+        
+      </nav>
+      <div class="wy-nav-content">
+        <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href=".." class="icon icon-home" aria-label="Docs"></a></li>
+      <li class="breadcrumb-item active">Binary Search</li>
+    <li class="wy-breadcrumbs-aside">
+    </li>
+  </ul>
+  <hr/>
 </div>
-        
-    <div class="container">
-        <div class="terminal-mkdocs-main-grid"><aside id="terminal-mkdocs-side-panel"><nav>
-  
-    <ul class="terminal-mkdocs-side-nav-items">
-        
-          
-
-
-
-<li class="terminal-mkdocs-side-nav-li">
-    
-    
-    
-        
-        
-            <a class="
-
-    terminal-mkdocs-side-nav-item" href="../docs/index.md">Home</a>
-        
-    
-    
-    
-  </li>
-        
-          
-
-
-
-<li class="terminal-mkdocs-side-nav-li">
-    
-    
-    
-        
-        
-            <a class="
-
-    terminal-mkdocs-side-nav-item" href="https://ltdk.me">My Blog</a>
-        
-    
-    
-    
-  </li>
-        
-          
-
-
-
-<li class="terminal-mkdocs-side-nav-li">
-    
-    
-        
-        
-
-        
-            
-    
-        
-        
-            
-            
-            <span class="
-        
-    
-
-    terminal-mkdocs-side-nav-item terminal-mkdocs-side-nav-section-no-index">Basic</span>
-        
-    
-    
-        
-      
-        
-            <ul class="terminal-mkdocs-side-nav-li-ul">
-        
-            
-            
-
-             
-                <li class="terminal-mkdocs-side-nav-li-ul-li">
-    
-        
-        
-            <a class="
-
-    terminal-mkdocs-side-nav-item" href="../arrays/">Arrays</a>
-        
-    
-    </li>
-            
-        
-            
-            
-
-             
-                <li class="terminal-mkdocs-side-nav-li-ul-li">
-    
-        
-        
-            <a class="
-
-    terminal-mkdocs-side-nav-item" href="../llists/">Linked Lists</a>
-        
-    
-    </li>
-            
-        
-            
-            
-
-             
-                <li class="terminal-mkdocs-side-nav-li-ul-li">
-    
-        
-        
-            <a class="
-
-    terminal-mkdocs-side-nav-item" href="../stacks/">Stacks</a>
-        
-    
-    </li>
-            
-            
-    </ul>
-        
-    
-  </li>
-        
-          
-
-
-
-<li class="terminal-mkdocs-side-nav-li">
-    
-    
-        
-        
-
-        
-            
-    
-        
-        
-            
-            
-            <span class="
-        
-    
-
-    terminal-mkdocs-side-nav-item terminal-mkdocs-side-nav-section-no-index">Misc</span>
-        
-    
-    
-        
-      
-        
-            <ul class="terminal-mkdocs-side-nav-li-ul">
-        
-            
-            
-
-             
-                <li class="terminal-mkdocs-side-nav-li-ul-li">
-    
-        
-        
-            <a class="
-
-    terminal-mkdocs-side-nav-item" href="../journey/">Journey</a>
-        
-    
-    </li>
-            
-            
-    </ul>
-        
-    
-  </li>
-        
-    </ul>
-  
-</nav><hr>
-<nav>
-    <ul>
-        <li><a href="#binary-search">Binary Search</a></li>
-        <li><a href="#scaffolding">Scaffolding</a></li><li><a href="#tips">Tips</a></li><li><a href="#the-textbook-implementation">The textbook implementation</a></li><li><a href="#variant-1-2-condition-binary-search">Variant 1: 2-condition binary search</a></li><li><a href="#problems">Problems</a></li><li><a href="#references">References</a></li>
-        
-    </ul>
-</nav>
-</aside>
-            <main id="terminal-mkdocs-main-content">
-<section id="mkdocs-terminal-content">
-    <h1 id="binary-search">Binary Search</h1>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+            <div class="section" itemprop="articleBody">
+              
+                <h1 id="binary-search">Binary Search</h1>
 <h2 id="scaffolding">Scaffolding</h2>
 <ol>
 <li>Find the search domain, i.e., the close interval containing all valid values. In other words, all posibilities that the optimal solution can be.</li>
@@ -308,29 +91,29 @@
 </ol>
 <h2 id="tips">Tips</h2>
 <ul>
-<li>(Python), don't rely on the <code>bisect</code> module from the library, write your own binary search.</li>
+<li>(Python), don&rsquo;t rely on the <code>bisect</code> module from the library, write your own binary search.</li>
 <li>Most of the time, the problems requires a little bit of tweak on binary search.</li>
 </ul>
 <h2 id="the-textbook-implementation">The textbook implementation</h2>
-<div class="language-python highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="k">def</span> <span class="nf">binsearch</span><span class="p">(</span><span class="n">lst</span><span class="p">,</span> <span class="n">key</span><span class="p">):</span>
-</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>    <span class="n">low</span><span class="p">,</span> <span class="n">high</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">lst</span><span class="p">)</span> <span class="o">-</span> <span class="mi">1</span> 
-</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>    <span class="k">while</span> <span class="n">low</span> <span class="o">&lt;=</span> <span class="n">high</span><span class="p">:</span>
-</span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>        <span class="n">mid</span> <span class="o">=</span> <span class="p">(</span><span class="n">low</span> <span class="o">+</span> <span class="n">high</span><span class="p">)</span> <span class="o">//</span> <span class="mi">2</span>
-</span><span id="__span-0-5"><a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a>        <span class="k">if</span> <span class="n">lst</span><span class="p">[</span><span class="n">mid</span><span class="p">]</span> <span class="o">==</span> <span class="n">key</span><span class="p">:</span> <span class="k">return</span> <span class="n">mid</span>
-</span><span id="__span-0-6"><a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a>        <span class="k">elif</span> <span class="n">lst</span><span class="p">[</span><span class="n">mid</span><span class="p">]</span> <span class="o">&lt;</span> <span class="n">key</span><span class="p">:</span> <span class="n">low</span> <span class="o">=</span> <span class="n">mid</span> <span class="o">+</span> <span class="mi">1</span> 
-</span><span id="__span-0-7"><a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a>        <span class="k">else</span><span class="p">:</span> <span class="n">high</span> <span class="o">=</span> <span class="n">mid</span> <span class="o">-</span> <span class="mi">1</span> 
-</span><span id="__span-0-8"><a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a>    <span class="k">return</span> <span class="o">-</span><span class="mi">1</span>  <span class="c1"># NOT FOUND</span>
-</span></code></pre></div>
+<pre><code class="language-python">def binsearch(lst, key):
+    low, high = 0, len(lst) - 1 
+    while low &lt;= high:
+        mid = (low + high) // 2
+        if lst[mid] == key: return mid
+        elif lst[mid] &lt; key: low = mid + 1 
+        else: high = mid - 1 
+    return -1  # NOT FOUND
+</code></pre>
 <h2 id="variant-1-2-condition-binary-search">Variant 1: 2-condition binary search</h2>
-<div class="language-python highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="k">def</span> <span class="nf">binsearch_tc</span><span class="p">(</span><span class="n">lst</span><span class="p">,</span> <span class="n">cnd</span><span class="p">):</span>
-</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>    <span class="n">low</span><span class="p">,</span> <span class="n">high</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">lst</span><span class="p">)</span> <span class="o">-</span> <span class="mi">1</span>
-</span><span id="__span-1-3"><a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a>    <span class="k">while</span> <span class="n">low</span> <span class="o">&lt;</span> <span class="n">high</span><span class="p">:</span>
-</span><span id="__span-1-4"><a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a>        <span class="n">mid</span> <span class="o">=</span> <span class="p">(</span><span class="n">low</span> <span class="o">+</span> <span class="n">high</span><span class="p">)</span> <span class="o">//</span> <span class="mi">2</span>
-</span><span id="__span-1-5"><a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a>        <span class="k">if</span> <span class="n">cond</span><span class="p">(</span><span class="n">i</span><span class="p">):</span>
-</span><span id="__span-1-6"><a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a>            <span class="n">high</span> <span class="o">=</span> <span class="n">mid</span>
-</span><span id="__span-1-7"><a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a>        <span class="k">else</span><span class="p">:</span> <span class="n">low</span> <span class="o">=</span> <span class="n">mid</span> <span class="o">+</span> <span class="mi">1</span>
-</span><span id="__span-1-8"><a id="__codelineno-1-8" name="__codelineno-1-8" href="#__codelineno-1-8"></a>    <span class="k">return</span> <span class="n">low</span>
-</span></code></pre></div>
+<pre><code class="language-python">def binsearch_tc(lst, cnd):
+    low, high = 0, len(lst) - 1
+    while low &lt; high:
+        mid = (low + high) // 2
+        if cond(i):
+            high = mid
+        else: low = mid + 1
+    return low
+</code></pre>
 <h2 id="problems">Problems</h2>
 <ul>
 <li><a href="https://leetcode.com/list?selectedList=rxo6ycwr">My List on Leetcode</a></li>
@@ -343,22 +126,42 @@
 <li>Chapter 6.2.1, Searching an Ordered Table, TAOCP Vol3.</li>
 <li>Chapter 6.2, Binary Search and Its Variances, Introduction to Algorithms - A create approach.</li>
 </ul>
-</section>
+              
+            </div>
+          </div><footer>
 
-            </main>
-        </div>
-        <hr><footer>
-    <div class="terminal-mkdocs-footer-grid">
-        <div id="terminal-mkdocs-footer-copyright-info">
-             Site built with <a href="http://www.mkdocs.org">MkDocs</a> and <a href="https://github.com/ntno/mkdocs-terminal">Terminal for MkDocs</a>.
-        </div>
-    </div>
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
 </footer>
-    </div>
+          
+        </div>
+      </div>
 
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="Versions">
+  <span class="rst-current-version" data-toggle="rst-current-version">
     
     
     
+  </span>
+</div>
+    <script src="../js/jquery-3.6.0.min.js"></script>
+    <script>var base_url = "..";</script>
+    <script src="../js/theme_extra.js"></script>
+    <script src="../js/theme.js"></script>
+    <script>
+        jQuery(function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        });
+    </script>
+
 </body>
-
 </html>

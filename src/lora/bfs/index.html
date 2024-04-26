@@ -1,345 +1,129 @@
 <!DOCTYPE html>
-<html lang="en">
+<html class="writer-html5" lang="en" >
 <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><link rel="canonical" href="https://ltdk.me/lora/bfs/" />
+      <link rel="shortcut icon" href="../img/favicon.ico" />
+    <title>Bread-First Search - Leetcode Practices</title>
+    <link rel="stylesheet" href="../css/theme.css" />
+    <link rel="stylesheet" href="../css/theme_extra.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" />
+        <link href="../assets/_mkdocstrings.css" rel="stylesheet" />
     
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <meta name="generator" content="mkdocs-1.5.3, mkdocs-terminal-4.4.0">
-     
-     
+      <script>
+        // Current page data
+        var mkdocs_page_name = "Bread-First Search";
+        var mkdocs_page_input_path = "bfs.md";
+        var mkdocs_page_url = "/lora/bfs/";
+      </script>
     
-    <link rel="canonical" href="https://ltdk.me/lora/bfs/"><link rel="icon" type="image/png" sizes="192x192" href="../img/android-chrome-192x192.png" />
-<link rel="icon" type="image/png" sizes="512x512" href="../img/android-chrome-512x512.png" />
-<link rel="apple-touch-icon" sizes="180x180" href="../img/apple-touch-icon.png" />
-<link rel="shortcut icon" type="image/png" sizes="48x48" href="../img/favicon.ico" />
-<link rel="icon" type="image/png" sizes="16x16" href="../img/favicon-16x16.png" />
-<link rel="icon" type="image/png" sizes="32x32" href="../img/favicon-32x32.png" />
-
-
-    
- 
-<title>Bread-First Search - Leetcode Practices</title>
-
-
-<link href="../css/fontawesome/css/fontawesome.min.css" rel="stylesheet">
-<link href="../css/fontawesome/css/solid.min.css" rel="stylesheet">
-<link href="../css/normalize.css" rel="stylesheet">
-<link href="../css/terminal.css" rel="stylesheet">
-<link href="../css/theme.css" rel="stylesheet">
-<link href="../css/theme.tile_grid.css" rel="stylesheet">
-<link href="../css/theme.footer.css" rel="stylesheet">
-<!-- default color palette -->
-<link href="../css/palettes/default.css" rel="stylesheet">
-
-<!-- page layout -->
-<style>
-/* initially set page layout to a one column grid */
-.terminal-mkdocs-main-grid {
-    display: grid;
-    grid-column-gap: 1.4em;
-    grid-template-columns: auto;
-    grid-template-rows: auto;
-}
-
-/*  
-*   when side navigation is not hidden, use a two column grid.  
-*   if the screen is too narrow, fall back to the initial one column grid layout.
-*   in this case the main content will be placed under the navigation panel. 
-*/
-@media only screen and (min-width: 70em) {
-    .terminal-mkdocs-main-grid {
-        grid-template-columns: 4fr 9fr;
-    }
-}</style>
-
-
-
-    
-    <link href="../assets/_mkdocstrings.css" rel="stylesheet">  
-    
-    
-
-    
-    
-    
-    
-    
-
-    
+    <!--[if lt IE 9]>
+      <script src="../js/html5shiv.min.js"></script>
+    <![endif]-->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+      <script>hljs.highlightAll();</script> 
 </head>
 
-<body class="terminal"><div class="container">
-    <div class="terminal-nav">
-        <header class="terminal-logo">
-            <div id="mkdocs-terminal-site-name" class="logo terminal-prompt"><a href="https://ltdk.me/lora/" class="no-style">Leetcode Practices</a></div>
-        </header>
-        
-        <nav class="terminal-menu">
-            
-            <ul vocab="https://schema.org/" typeof="BreadcrumbList">
-                
-                
-                <li property="itemListElement" typeof="ListItem">
-                    <a href="../docs/index.md" class="menu-item " property="item" typeof="WebPage">
-                        <span property="name">Home</span>
-                    </a>
-                    <meta property="position" content="0">
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+          <a href=".." class="icon icon-home"> Leetcode Practices
+        </a>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="..">Home</a>
                 </li>
-                
-                
-                <li property="itemListElement" typeof="ListItem">
-                    <a href="https://ltdk.me" class="menu-item " property="item" typeof="WebPage">
-                        <span property="name">My Blog</span>
-                    </a>
-                    <meta property="position" content="1">
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="" href="https://ltdk.me">My Blog</a>
                 </li>
-                
-                
-                
-                
-                
-                    
-                    
-                    
-            </ul>
-            
-        </nav>
+              </ul>
+              <p class="caption"><span class="caption-text">Basic</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../arrays/">Arrays</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../llists/">Linked Lists</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../stacks/">Stacks</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Misc</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../journey/">Journey</a>
+                  </li>
+              </ul>
+      </div>
     </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+      <nav class="wy-nav-top" role="navigation" aria-label="Mobile navigation menu">
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="..">Leetcode Practices</a>
+        
+      </nav>
+      <div class="wy-nav-content">
+        <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href=".." class="icon icon-home" aria-label="Docs"></a></li>
+      <li class="breadcrumb-item active">Bread-First Search</li>
+    <li class="wy-breadcrumbs-aside">
+    </li>
+  </ul>
+  <hr/>
 </div>
-        
-    <div class="container">
-        <div class="terminal-mkdocs-main-grid"><aside id="terminal-mkdocs-side-panel"><nav>
-  
-    <ul class="terminal-mkdocs-side-nav-items">
-        
-          
-
-
-
-<li class="terminal-mkdocs-side-nav-li">
-    
-    
-    
-        
-        
-            <a class="
-
-    terminal-mkdocs-side-nav-item" href="../docs/index.md">Home</a>
-        
-    
-    
-    
-  </li>
-        
-          
-
-
-
-<li class="terminal-mkdocs-side-nav-li">
-    
-    
-    
-        
-        
-            <a class="
-
-    terminal-mkdocs-side-nav-item" href="https://ltdk.me">My Blog</a>
-        
-    
-    
-    
-  </li>
-        
-          
-
-
-
-<li class="terminal-mkdocs-side-nav-li">
-    
-    
-        
-        
-
-        
-            
-    
-        
-        
-            
-            
-            <span class="
-        
-    
-
-    terminal-mkdocs-side-nav-item terminal-mkdocs-side-nav-section-no-index">Basic</span>
-        
-    
-    
-        
-      
-        
-            <ul class="terminal-mkdocs-side-nav-li-ul">
-        
-            
-            
-
-             
-                <li class="terminal-mkdocs-side-nav-li-ul-li">
-    
-        
-        
-            <a class="
-
-    terminal-mkdocs-side-nav-item" href="../arrays/">Arrays</a>
-        
-    
-    </li>
-            
-        
-            
-            
-
-             
-                <li class="terminal-mkdocs-side-nav-li-ul-li">
-    
-        
-        
-            <a class="
-
-    terminal-mkdocs-side-nav-item" href="../llists/">Linked Lists</a>
-        
-    
-    </li>
-            
-        
-            
-            
-
-             
-                <li class="terminal-mkdocs-side-nav-li-ul-li">
-    
-        
-        
-            <a class="
-
-    terminal-mkdocs-side-nav-item" href="../stacks/">Stacks</a>
-        
-    
-    </li>
-            
-            
-    </ul>
-        
-    
-  </li>
-        
-          
-
-
-
-<li class="terminal-mkdocs-side-nav-li">
-    
-    
-        
-        
-
-        
-            
-    
-        
-        
-            
-            
-            <span class="
-        
-    
-
-    terminal-mkdocs-side-nav-item terminal-mkdocs-side-nav-section-no-index">Misc</span>
-        
-    
-    
-        
-      
-        
-            <ul class="terminal-mkdocs-side-nav-li-ul">
-        
-            
-            
-
-             
-                <li class="terminal-mkdocs-side-nav-li-ul-li">
-    
-        
-        
-            <a class="
-
-    terminal-mkdocs-side-nav-item" href="../journey/">Journey</a>
-        
-    
-    </li>
-            
-            
-    </ul>
-        
-    
-  </li>
-        
-    </ul>
-  
-</nav><hr>
-<nav>
-    <ul>
-        <li><a href="#bread-first-search">Bread-First Search</a></li>
-        <li><a href="#identifying-problems">Identifying problems</a></li><li><a href="#template">Template</a></li><li><a href="#problems">Problems</a></li>
-    </ul>
-</nav>
-</aside>
-            <main id="terminal-mkdocs-main-content">
-<section id="mkdocs-terminal-content">
-    <h1 id="bread-first-search">Bread-First Search</h1>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+            <div class="section" itemprop="articleBody">
+              
+                <h1 id="bread-first-search">Bread-First Search</h1>
 <h2 id="identifying-problems">Identifying problems</h2>
 <ul>
 <li>Graph or search problems: each state is a node and all edges (connections) have uniform (or none) weights.</li>
 <li>Need to consider which state need to add to the queue (the <code>Matrix 01</code> problem).</li>
 </ul>
 <h2 id="template">Template</h2>
-<div class="language-py highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="k">def</span> <span class="nf">bfs</span><span class="p">(</span><span class="o">...</span><span class="p">):</span>
-</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>    <span class="c1"># handle edge case, early returns</span>
-</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>    <span class="c1"># most of the time it is the seed value pushed to the queue</span>
-</span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>
-</span><span id="__span-0-5"><a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a>    <span class="c1"># Init</span>
-</span><span id="__span-0-6"><a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a>    <span class="n">queue</span> <span class="o">=</span> <span class="n">Deque</span><span class="p">()</span>
-</span><span id="__span-0-7"><a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a>    <span class="n">visited</span> <span class="o">=</span> <span class="o">...</span>
-</span><span id="__span-0-8"><a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a>
-</span><span id="__span-0-9"><a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a><span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
-</span><span id="__span-0-10"><a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a><span class="sd">    Add a new item to the queue.</span>
-</span><span id="__span-0-11"><a id="__codelineno-0-11" name="__codelineno-0-11" href="#__codelineno-0-11"></a><span class="sd">    Additional step includes checking whether the item is already visited.</span>
-</span><span id="__span-0-12"><a id="__codelineno-0-12" name="__codelineno-0-12" href="#__codelineno-0-12"></a><span class="sd">    &quot;&quot;&quot;</span>
-</span><span id="__span-0-13"><a id="__codelineno-0-13" name="__codelineno-0-13" href="#__codelineno-0-13"></a>    <span class="k">def</span> <span class="nf">add_to_queue</span><span class="p">(</span><span class="n">new_item</span><span class="p">):</span>
-</span><span id="__span-0-14"><a id="__codelineno-0-14" name="__codelineno-0-14" href="#__codelineno-0-14"></a>        <span class="o">...</span>
-</span><span id="__span-0-15"><a id="__codelineno-0-15" name="__codelineno-0-15" href="#__codelineno-0-15"></a>
-</span><span id="__span-0-16"><a id="__codelineno-0-16" name="__codelineno-0-16" href="#__codelineno-0-16"></a><span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
-</span><span id="__span-0-17"><a id="__codelineno-0-17" name="__codelineno-0-17" href="#__codelineno-0-17"></a><span class="sd">    Find all valid neighbors given the current item and add them to the queue.</span>
-</span><span id="__span-0-18"><a id="__codelineno-0-18" name="__codelineno-0-18" href="#__codelineno-0-18"></a><span class="sd">    Optimization: early termination by checking the stop condition on the neighbor</span>
-</span><span id="__span-0-19"><a id="__codelineno-0-19" name="__codelineno-0-19" href="#__codelineno-0-19"></a><span class="sd">    &quot;&quot;&quot;</span>
-</span><span id="__span-0-20"><a id="__codelineno-0-20" name="__codelineno-0-20" href="#__codelineno-0-20"></a>    <span class="k">def</span> <span class="nf">neighbors</span><span class="p">(</span><span class="n">item</span><span class="p">):</span>
-</span><span id="__span-0-21"><a id="__codelineno-0-21" name="__codelineno-0-21" href="#__codelineno-0-21"></a>        <span class="o">...</span>
-</span><span id="__span-0-22"><a id="__codelineno-0-22" name="__codelineno-0-22" href="#__codelineno-0-22"></a>
-</span><span id="__span-0-23"><a id="__codelineno-0-23" name="__codelineno-0-23" href="#__codelineno-0-23"></a>    <span class="k">def</span> <span class="nf">update_queue</span><span class="p">(</span><span class="n">item</span><span class="p">):</span>
-</span><span id="__span-0-24"><a id="__codelineno-0-24" name="__codelineno-0-24" href="#__codelineno-0-24"></a>        <span class="k">for</span> <span class="n">neighbor</span> <span class="ow">in</span> <span class="n">neighbors</span><span class="p">(</span><span class="n">item</span><span class="p">):</span>
-</span><span id="__span-0-25"><a id="__codelineno-0-25" name="__codelineno-0-25" href="#__codelineno-0-25"></a>            <span class="n">add_to_queue</span><span class="p">(</span><span class="n">neighbor</span><span class="p">)</span>
-</span><span id="__span-0-26"><a id="__codelineno-0-26" name="__codelineno-0-26" href="#__codelineno-0-26"></a>
-</span><span id="__span-0-27"><a id="__codelineno-0-27" name="__codelineno-0-27" href="#__codelineno-0-27"></a>    <span class="n">queue</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">seed</span><span class="p">)</span> 
-</span><span id="__span-0-28"><a id="__codelineno-0-28" name="__codelineno-0-28" href="#__codelineno-0-28"></a>    <span class="n">stop_condition</span> <span class="o">=</span> <span class="kc">False</span>
-</span><span id="__span-0-29"><a id="__codelineno-0-29" name="__codelineno-0-29" href="#__codelineno-0-29"></a>    <span class="k">while</span> <span class="n">stop_condition</span> <span class="ow">and</span> <span class="nb">len</span><span class="p">(</span><span class="n">queue</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
-</span><span id="__span-0-30"><a id="__codelineno-0-30" name="__codelineno-0-30" href="#__codelineno-0-30"></a>        <span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">queue</span><span class="p">)):</span>
-</span><span id="__span-0-31"><a id="__codelineno-0-31" name="__codelineno-0-31" href="#__codelineno-0-31"></a>            <span class="n">cur_item</span> <span class="o">=</span> <span class="n">queue</span><span class="o">.</span><span class="n">popleft</span><span class="p">()</span>
-</span><span id="__span-0-32"><a id="__codelineno-0-32" name="__codelineno-0-32" href="#__codelineno-0-32"></a>            <span class="k">if</span> <span class="n">check</span><span class="p">(</span><span class="n">value</span><span class="p">):</span>
-</span><span id="__span-0-33"><a id="__codelineno-0-33" name="__codelineno-0-33" href="#__codelineno-0-33"></a>                <span class="n">stop_condition</span> <span class="o">=</span> <span class="kc">True</span>
-</span><span id="__span-0-34"><a id="__codelineno-0-34" name="__codelineno-0-34" href="#__codelineno-0-34"></a>                <span class="k">break</span>
-</span><span id="__span-0-35"><a id="__codelineno-0-35" name="__codelineno-0-35" href="#__codelineno-0-35"></a>            <span class="n">update_queue</span><span class="p">(</span><span class="n">cur_item</span><span class="p">)</span>
-</span></code></pre></div>
+<pre><code class="language-py">def bfs(...):
+    # handle edge case, early returns
+    # most of the time it is the seed value pushed to the queue
+
+    # Init
+    queue = Deque()
+    visited = ...
+
+    &quot;&quot;&quot;
+    Add a new item to the queue.
+    Additional step includes checking whether the item is already visited.
+    &quot;&quot;&quot;
+    def add_to_queue(new_item):
+        ...
+
+    &quot;&quot;&quot;
+    Find all valid neighbors given the current item and add them to the queue.
+    Optimization: early termination by checking the stop condition on the neighbor
+    &quot;&quot;&quot;
+    def neighbors(item):
+        ...
+
+    def update_queue(item):
+        for neighbor in neighbors(item):
+            add_to_queue(neighbor)
+
+    queue.append(seed) 
+    stop_condition = False
+    while stop_condition and len(queue) &gt; 0:
+        for _ in range(len(queue)):
+            cur_item = queue.popleft()
+            if check(value):
+                stop_condition = True
+                break
+            update_queue(cur_item)
+</code></pre>
 <h2 id="problems">Problems</h2>
 <ul>
 <li><a href="https://leetcode.com/problems/perfect-squares/">Perfect Squares</a></li>
@@ -347,22 +131,42 @@
 <li><a href="https://leetcode.com/problems/number-of-islands/">Number Of Islands</a></li>
 <li><a href="https://leetcode.com/problems/01-matrix">Matrix 01</a></li>
 </ul>
-</section>
+              
+            </div>
+          </div><footer>
 
-            </main>
-        </div>
-        <hr><footer>
-    <div class="terminal-mkdocs-footer-grid">
-        <div id="terminal-mkdocs-footer-copyright-info">
-             Site built with <a href="http://www.mkdocs.org">MkDocs</a> and <a href="https://github.com/ntno/mkdocs-terminal">Terminal for MkDocs</a>.
-        </div>
-    </div>
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
 </footer>
-    </div>
+          
+        </div>
+      </div>
 
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="Versions">
+  <span class="rst-current-version" data-toggle="rst-current-version">
     
     
     
+  </span>
+</div>
+    <script src="../js/jquery-3.6.0.min.js"></script>
+    <script>var base_url = "..";</script>
+    <script src="../js/theme_extra.js"></script>
+    <script src="../js/theme.js"></script>
+    <script>
+        jQuery(function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        });
+    </script>
+
 </body>
-
 </html>
