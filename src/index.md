@@ -6,6 +6,7 @@ description: Le Tan Dang Khoa Homepage
 
 ## Interests
 
+- [golang](/golang/)
 - [Coding Practices](/lora/)
 - [Vector Search](https://github.com/dangkhoasdc/awesome-vector-database)
 - [The Art of Computer Programming](https://github.com/dangkhoasdc/taocp)
