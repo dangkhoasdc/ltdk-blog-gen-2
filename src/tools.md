@@ -1,6 +1,6 @@
 ---
 layout: base.njk
-title: (en) golang
+title: tools
 ---
 
 ${toc}
@@ -22,5 +22,9 @@ ${toc}
 tba
 
 # Latex 
+
+tba
+
+# neovim
 
 tba
