@@ -59,7 +59,7 @@ module.exports = function (eleventyConfig) {
     mdLib => mdLib
       .use(markdownItHeaderSections)
       .use(markdownItFootnote)
-			.use(markdownItAnchor, {permalink: true, permalinkBefore: true, permalinkSymbol: '§'})
+			.use(markdownItAnchor, {permalink: markdownItAnchor.permalink.headerLink()})
 			.use(markdownItTOCDoneRight)
   )
 
