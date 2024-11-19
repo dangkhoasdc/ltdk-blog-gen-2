@@ -13,6 +13,7 @@ description: Le Tan Dang Khoa Homepage
 - [The Art of Computer Programming](https://github.com/dangkhoasdc/taocp)
 
 ## Posts
+- [Banhmi in Singapore](/banhmi_sg/)
 - [(vi) Tóm tắt RecSys-23](/recsys23/)
 
 ## Contact
