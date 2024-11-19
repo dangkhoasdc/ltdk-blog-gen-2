@@ -9,7 +9,7 @@
                 {{css | safe}}
             </style>
         {% else %}
-            <link rel="stylesheet" href="/static/styles.min.css">
+            <link rel="stylesheet" href="/static/build/styles.min.css">
         {% endif %}
 
         <!-- Try and serve Google Fonts in the most efficent way possible -->
@@ -25,5 +25,5 @@
           {{ content | safe }}
         </main>
     </body>
-    <script src="/static/app.min.js" defer></script>
+    <script src="/static/build/scripts.min.js" defer></script>
 </html>
