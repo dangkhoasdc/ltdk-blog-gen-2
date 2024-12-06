@@ -20,7 +20,7 @@ description: Le Tan Dang Khoa Homepage
 
 ## Misc
 
-- [My ArchLinux setup via WSL 2](https://gist.github.com/dangkhoasdc/ef5047b43359b73fd5a2299aa0a07b5e)
+- [ArchLinux on WSL2](https://gist.github.com/dangkhoasdc/ef5047b43359b73fd5a2299aa0a07b5e)
 - 📖 [Tracking](https://trello.com/b/vcIzCSFj/reading-pipe)
 - 🎮 [Steam](https://steamcommunity.com/profiles/76561198324160552/) / [Tracking](https://trello.com/b/o2ld2pnH)
 
