@@ -11,6 +11,7 @@ ${toc}
 - [atuin](https://atuin.sh/)
 - [lazygit](https://github.com/jesseduffield/lazygit)
 - [superfile](https://superfile.netlify.app/)
+- [k9s](https://k9scli.io/)
 
 # Python
 
