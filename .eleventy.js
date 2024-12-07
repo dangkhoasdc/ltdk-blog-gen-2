@@ -1,3 +1,4 @@
+const syntaxHighlight = require("@11ty/eleventy-plugin-syntaxhighlight");
 const markdownItFootnote = require("markdown-it-footnote")
 const markdownItHeaderSections = require("markdown-it-header-sections")
 const markdownItAnchor = require("markdown-it-anchor")
@@ -10,6 +11,7 @@ const htmlSave = require("htmlnano").presets.safe;
 module.exports = function (eleventyConfig) {
 	// Folders to copy to build dir
 	eleventyConfig.addPassthroughCopy("src/static");
+	eleventyConfig.addPlugin(syntaxHighlight);
 
 	// Filter to parse dates
 	eleventyConfig.addFilter("htmlDateString", function (dateObj) {

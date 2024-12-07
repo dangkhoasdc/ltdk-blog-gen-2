@@ -2,67 +2,72 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     <url>
          <loc>https://ltdk.me/lora/</loc>
-         <lastmod>2024-04-27</lastmod>
+         <lastmod>2024-12-07</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://ltdk.me/lora/adp/</loc>
-         <lastmod>2024-04-27</lastmod>
+         <lastmod>2024-12-07</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://ltdk.me/lora/arrays/</loc>
-         <lastmod>2024-04-27</lastmod>
+         <lastmod>2024-12-07</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://ltdk.me/lora/bfs/</loc>
-         <lastmod>2024-04-27</lastmod>
+         <lastmod>2024-12-07</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://ltdk.me/lora/bits/</loc>
-         <lastmod>2024-04-27</lastmod>
+         <lastmod>2024-12-07</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://ltdk.me/lora/bs/</loc>
+         <lastmod>2024-12-07</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://ltdk.me/lora/bsc/</loc>
-         <lastmod>2024-04-27</lastmod>
+         <lastmod>2024-12-07</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://ltdk.me/lora/dfs/</loc>
-         <lastmod>2024-04-27</lastmod>
+         <lastmod>2024-12-07</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://ltdk.me/lora/dp/</loc>
-         <lastmod>2024-04-27</lastmod>
+         <lastmod>2024-12-07</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://ltdk.me/lora/journey/</loc>
-         <lastmod>2024-04-27</lastmod>
+         <lastmod>2024-12-07</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://ltdk.me/lora/llists/</loc>
-         <lastmod>2024-04-27</lastmod>
+         <lastmod>2024-12-07</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://ltdk.me/lora/misc/</loc>
-         <lastmod>2024-04-27</lastmod>
+         <lastmod>2024-12-07</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://ltdk.me/lora/stacks/</loc>
-         <lastmod>2024-04-27</lastmod>
+         <lastmod>2024-12-07</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://ltdk.me/lora/strings/</loc>
-         <lastmod>2024-04-27</lastmod>
+         <lastmod>2024-12-07</lastmod>
          <changefreq>daily</changefreq>
     </url>
 </urlset>
