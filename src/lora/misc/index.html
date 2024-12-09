@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><link rel="canonical" href="https://ltdk.me/lora/misc/" />
       <link rel="shortcut icon" href="../img/favicon.ico" />
-    <title>Misc - Leetcode Practices</title>
+    <title>Python Tricks - Leetcode Practices</title>
     <link rel="stylesheet" href="../css/theme.css" />
     <link rel="stylesheet" href="../css/theme_extra.css" />
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" />
@@ -13,7 +13,7 @@
     
       <script>
         // Current page data
-        var mkdocs_page_name = "Misc";
+        var mkdocs_page_name = "Python Tricks";
         var mkdocs_page_input_path = "misc.md";
         var mkdocs_page_url = "/lora/misc/";
       </script>
@@ -53,9 +53,25 @@
                   <li class="toctree-l1"><a class="reference internal" href="../stacks/">Stacks</a>
                   </li>
               </ul>
-              <p class="caption"><span class="caption-text">Misc</span></p>
               <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../dp/">Dynamic Programming</a>
+                </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Misc</span></p>
+              <ul class="current">
+                  <li class="toctree-l1"><a class="reference internal" href="../schedule/">Scheduling</a>
+                  </li>
                   <li class="toctree-l1"><a class="reference internal" href="../journey/">Journey</a>
+                  </li>
+                  <li class="toctree-l1 current"><a class="reference internal current" href="./">Python Tricks</a>
+    <ul class="current">
+    <li class="toctree-l2"><a class="reference internal" href="#why-python">Why Python?</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#patterns">Patterns</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#links">Links</a>
+    </li>
+    </ul>
                   </li>
               </ul>
       </div>
@@ -72,7 +88,8 @@
         <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
   <ul class="wy-breadcrumbs">
     <li><a href=".." class="icon icon-home" aria-label="Docs"></a></li>
-      <li class="breadcrumb-item active">Misc</li>
+          <li class="breadcrumb-item">Misc</li>
+      <li class="breadcrumb-item active">Python Tricks</li>
     <li class="wy-breadcrumbs-aside">
     </li>
   </ul>
@@ -82,6 +99,21 @@
             <div class="section" itemprop="articleBody">
               
                 <h1 id="misc">Misc</h1>
+<h2 id="why-python">Why Python?</h2>
+<ul>
+<li>Less verbose than C++ &amp; Java, concise syntax looks almost like pseudocode.</li>
+<li>Support wide range of data structures, e.g., priority queues via <code>heap</code>, Deque via <code>deque</code>, graph via <code>defaultdict</code>.</li>
+</ul>
+<h2 id="patterns">Patterns</h2>
+<ul>
+<li>Nested loop: use <code>product</code> from <code>itertools</code>:</li>
+</ul>
+<pre><code class="language-python">for i, j in product(range(N), range(N)):
+    ...
+</code></pre>
+<ul>
+<li>Memorization: Use <code>cache</code> in <code>functools</code>, almost always required for DP problems (unless you tabulate it).</li>
+</ul>
 <h2 id="links">Links</h2>
 <ul>
 <li><a href="https://www.jjinux.com/2022/08/python-my-favorite-python-tricks-for.html">https://www.jjinux.com/2022/08/python-my-favorite-python-tricks-for.html</a></li>
@@ -89,6 +121,9 @@
               
             </div>
           </div><footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="Footer Navigation">
+        <a href="../journey/" class="btn btn-neutral float-left" title="Journey"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+    </div>
 
   <hr/>
 
@@ -109,6 +144,8 @@
   <div class="rst-versions" role="note" aria-label="Versions">
   <span class="rst-current-version" data-toggle="rst-current-version">
     
+    
+      <span><a href="../journey/" style="color: #fcfcfc">&laquo; Previous</a></span>
     
     
   </span>

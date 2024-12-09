@@ -53,9 +53,49 @@
                   <li class="toctree-l1"><a class="reference internal" href="../stacks/">Stacks</a>
                   </li>
               </ul>
+              <ul class="current">
+                <li class="toctree-l1 current"><a class="reference internal current" href="./">Dynamic Programming</a>
+    <ul class="current">
+    <li class="toctree-l2"><a class="reference internal" href="#recursion">Recursion</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#forward-recursion">Forward Recursion</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#backward-recursion">Backward Recursion</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#strategies">Strategies</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#1-finding-state-variables">1. Finding state variables</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#2-defining-the-recusion-relation">2. Defining the recusion relation</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#3-finalizing-the-top-down-approach">3. Finalizing the top-down approach</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#4-selecting-data-structures-for-memorization">4. Selecting data structures for memorization</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#5-finding-the-computation-path">5. Finding the computation path</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#6-finalizing-the-bottom-up-approach">6. Finalizing the bottom-up approach</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#other-optimizations">Other optimizations</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#patterns">Patterns</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#problems">Problems</a>
+    </li>
+    </ul>
+                </li>
+              </ul>
               <p class="caption"><span class="caption-text">Misc</span></p>
               <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../schedule/">Scheduling</a>
+                  </li>
                   <li class="toctree-l1"><a class="reference internal" href="../journey/">Journey</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../misc/">Python Tricks</a>
                   </li>
               </ul>
       </div>
@@ -82,13 +122,66 @@
             <div class="section" itemprop="articleBody">
               
                 <h1 id="dynamic-programming">Dynamic Programming</h1>
+<h2 id="recursion">Recursion</h2>
+<h3 id="forward-recursion">Forward Recursion</h3>
+<p>I saw a common pattern where thinking forwardly is easier to reason. For example, the <a href="https://leetcode.com/problems/house-robber/description/">House Robber</a> problem:</p>
+<pre><code class="language-python">from functools import cache
+
+def rob(self, nums: List[int]) -&gt; int:
+    n = len(nums)
+    @cache
+    def dp(i: int) -&gt; int:
+        if i &gt;= n: return 0
+        return max(
+            nums[i] + dp(i+2),  # rob the current house, skip the next one
+            dp(i+1)             # skip the current house, rob the next one
+        )
+
+    return dp(0)
+</code></pre>
+<p>The logic is simple: at the ith house, we either: (1) rob it and move to the next next house (<code>i+2</code>), or (2) we don&rsquo;t rob and move to the next one. When we go over the nth house, we rob nothing (<code>0</code>) since there is no more house to rob.</p>
+<p><a href="https://leetcode.com/problems/maximum-score-from-performing-multiplication-operations/description/">This problem</a> also has the similar approach:</p>
+<pre><code class="language-python">from functools import cache
+
+def maximumScore(self, nums: List[int], multipliers: List[int]) -&gt; int:
+    n, m = len(nums), len(multipliers)
+    @cache
+    def dp(i, left):
+        # inclusive [left, right] of nums
+        if i &gt;= m: return 0
+        right = n - 1 - (i - left)
+        return max(
+            nums[left] * multipliers[i] + dp(i+1, left+1),
+            nums[right] * multipliers[i] + dp(i+1, left)
+        )
+    return dp(0, 0)
+</code></pre>
+<h3 id="backward-recursion">Backward Recursion</h3>
+<ul>
+<li>Or backtracking.</li>
+<li>Noticeably, we need to define the <em>base case</em>. </li>
+</ul>
+<h2 id="strategies">Strategies</h2>
+<h3 id="1-finding-state-variables">1. Finding state variables</h3>
+<h3 id="2-defining-the-recusion-relation">2. Defining the recusion relation</h3>
+<h3 id="3-finalizing-the-top-down-approach">3. Finalizing the top-down approach</h3>
+<h3 id="4-selecting-data-structures-for-memorization">4. Selecting data structures for memorization</h3>
+<h3 id="5-finding-the-computation-path">5. Finding the computation path</h3>
+<h3 id="6-finalizing-the-bottom-up-approach">6. Finalizing the bottom-up approach</h3>
+<h2 id="other-optimizations">Other optimizations</h2>
+<h2 id="patterns">Patterns</h2>
 <h2 id="problems">Problems</h2>
 <ul>
 <li><a href="https://leetcode.com/problems/longest-increasing-subsequence">Longest Increasing Subsequence</a></li>
+<li><a href="https://leetcode.com/problems/delete-and-earn/description/">Delete and Earn</a></li>
 </ul>
               
             </div>
           </div><footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="Footer Navigation">
+        <a href="../stacks/" class="btn btn-neutral float-left" title="Stacks"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="../schedule/" class="btn btn-neutral float-right" title="Scheduling">Next <span class="icon icon-circle-arrow-right"></span></a>
+    </div>
 
   <hr/>
 
@@ -110,6 +203,10 @@
   <span class="rst-current-version" data-toggle="rst-current-version">
     
     
+      <span><a href="../stacks/" style="color: #fcfcfc">&laquo; Previous</a></span>
+    
+    
+      <span><a href="../schedule/" style="color: #fcfcfc">Next &raquo;</a></span>
     
   </span>
 </div>
