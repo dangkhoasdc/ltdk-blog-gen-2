@@ -17,6 +17,7 @@ description: Le Tan Dang Khoa Homepage
 - [(vi) Tóm tắt RecSys-23](/recsys23/)
 
 ## Contact
+- [My CV](https://www.overleaf.com/read/xrksrvbjptky#7a572b)
 
 ## Misc
 
