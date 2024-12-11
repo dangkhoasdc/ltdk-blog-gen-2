@@ -3,9 +3,9 @@
 <head>
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><link rel="canonical" href="https://ltdk.me/lora/bsc/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><link rel="canonical" href="https://ltdk.me/lora/lsa/" />
       <link rel="shortcut icon" href="../img/favicon.ico" />
-    <title>Binary Search - Leetcode Practices</title>
+    <title>Line Sweeping - Leetcode Practices</title>
     <link rel="stylesheet" href="../css/theme.css" />
     <link rel="stylesheet" href="../css/theme_extra.css" />
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" />
@@ -13,9 +13,9 @@
     
       <script>
         // Current page data
-        var mkdocs_page_name = "Binary Search";
-        var mkdocs_page_input_path = "bsc.md";
-        var mkdocs_page_url = "/lora/bsc/";
+        var mkdocs_page_name = "Line Sweeping";
+        var mkdocs_page_input_path = "lsa.md";
+        var mkdocs_page_url = "/lora/lsa/";
       </script>
     
     <!--[if lt IE 9]>
@@ -58,10 +58,18 @@
                 </li>
               </ul>
               <p class="caption"><span class="caption-text">Misc</span></p>
-              <ul>
+              <ul class="current">
                   <li class="toctree-l1"><a class="reference internal" href="../mrp/">Maximal Rectangle Problem</a>
                   </li>
-                  <li class="toctree-l1"><a class="reference internal" href="../lsa/">Line Sweeping</a>
+                  <li class="toctree-l1 current"><a class="reference internal current" href="./">Line Sweeping</a>
+    <ul class="current">
+    <li class="toctree-l2"><a class="reference internal" href="#algorithms">Algorithms</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#related-topic">Related Topic</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#reading">Reading</a>
+    </li>
+    </ul>
                   </li>
                   <li class="toctree-l1"><a class="reference internal" href="../schedule/">Scheduling</a>
                   </li>
@@ -84,7 +92,8 @@
         <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
   <ul class="wy-breadcrumbs">
     <li><a href=".." class="icon icon-home" aria-label="Docs"></a></li>
-      <li class="breadcrumb-item active">Binary Search</li>
+          <li class="breadcrumb-item">Misc</li>
+      <li class="breadcrumb-item active">Line Sweeping</li>
     <li class="wy-breadcrumbs-aside">
     </li>
   </ul>
@@ -93,54 +102,27 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
             <div class="section" itemprop="articleBody">
               
-                <h1 id="binary-search">Binary Search</h1>
-<h2 id="scaffolding">Scaffolding</h2>
+                <h1 id="line-sweeping-algorithm">Line Sweeping Algorithm</h1>
+<h2 id="algorithms">Algorithms</h2>
 <ol>
-<li>Find the search domain, i.e., the close interval containing all valid values. In other words, all posibilities that the optimal solution can be.</li>
-<li>Define the <strong>objective</strong>.</li>
-<li>Sort the search domain, make them monotinic to certain property (most of the time, it is the value of <strong>objective</strong>).</li>
-<li>Apply binary search.</li>
+<li>Use a counter to keep track when we enter an interval (<code>+1</code>) and when exiting it (<code>-1</code>).</li>
+<li>Use prefix sum to find the maximum value (the time when it is the most overlapped).</li>
 </ol>
-<h2 id="tips">Tips</h2>
+<h2 id="related-topic">Related Topic</h2>
 <ul>
-<li>(Python), don&rsquo;t rely on the <code>bisect</code> module from the library, write your own binary search.</li>
-<li>Most of the time, the problems requires a little bit of tweak on binary search.</li>
+<li>[./schedule.md]</li>
 </ul>
-<h2 id="the-textbook-implementation">The textbook implementation</h2>
-<pre><code class="language-python">def binsearch(lst, key):
-    low, high = 0, len(lst) - 1 
-    while low &lt;= high:
-        mid = (low + high) // 2
-        if lst[mid] == key: return mid
-        elif lst[mid] &lt; key: low = mid + 1 
-        else: high = mid - 1 
-    return -1  # NOT FOUND
-</code></pre>
-<h2 id="variant-1-2-condition-binary-search">Variant 1: 2-condition binary search</h2>
-<pre><code class="language-python">def binsearch_tc(lst, cnd):
-    low, high = 0, len(lst) - 1
-    while low &lt; high:
-        mid = (low + high) // 2
-        if cond(i):
-            high = mid
-        else: low = mid + 1
-    return low
-</code></pre>
-<h2 id="problems">Problems</h2>
+<h2 id="reading">Reading</h2>
 <ul>
-<li><a href="https://leetcode.com/list?selectedList=rxo6ycwr">My List on Leetcode</a></li>
-<li><a href="https://leetcode.com/problems/find-peak-element/">Find Peak Element</a></li>
-<li><a href="https://leetcode.com/problems/find-minimum-in-rotated-sorted-array">Find Minimum in Rotated Sorted Array</a></li>
-</ul>
-<h1 id="references">References</h1>
-<ul>
-<li>Column 4, Writing Correct Programs. Programming Pearls: A must read for anyone who wants to master binary search.</li>
-<li>Chapter 6.2.1, Searching an Ordered Table, TAOCP Vol3.</li>
-<li>Chapter 6.2, Binary Search and Its Variances, Introduction to Algorithms - A create approach.</li>
+<li><a href="https://leetcode.com/discuss/study-guide/2166045/line-sweep-algorithms">Line Sweep Algorithms</a></li>
 </ul>
               
             </div>
           </div><footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="Footer Navigation">
+        <a href="../mrp/" class="btn btn-neutral float-left" title="Maximal Rectangle Problem"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="../schedule/" class="btn btn-neutral float-right" title="Scheduling">Next <span class="icon icon-circle-arrow-right"></span></a>
+    </div>
 
   <hr/>
 
@@ -162,6 +144,10 @@
   <span class="rst-current-version" data-toggle="rst-current-version">
     
     
+      <span><a href="../mrp/" style="color: #fcfcfc">&laquo; Previous</a></span>
+    
+    
+      <span><a href="../schedule/" style="color: #fcfcfc">Next &raquo;</a></span>
     
   </span>
 </div>
