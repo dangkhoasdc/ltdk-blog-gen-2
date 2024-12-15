@@ -44,7 +44,7 @@
                 <li class="toctree-l1"><a class="" href="https://ltdk.me">My Blog</a>
                 </li>
               </ul>
-              <p class="caption"><span class="caption-text">Basic</span></p>
+              <p class="caption"><span class="caption-text">Data Structures</span></p>
               <ul>
                   <li class="toctree-l1"><a class="reference internal" href="../arrays/">Arrays</a>
                   </li>
@@ -52,9 +52,11 @@
                   </li>
                   <li class="toctree-l1"><a class="reference internal" href="../stacks/">Stacks</a>
                   </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../pq/">Priority Queues</a>
+                  </li>
               </ul>
               <ul class="current">
-                <li class="toctree-l1 current"><a class="reference internal current" href="./">Dynamic Programming</a>
+                <li class="toctree-l1 current"><a class="reference internal current" href="#">Dynamic Programming</a>
     <ul class="current">
     <li class="toctree-l2"><a class="reference internal" href="#recursion">Recursion</a>
         <ul>
@@ -81,10 +83,20 @@
         </ul>
     </li>
     <li class="toctree-l2"><a class="reference internal" href="#other-optimizations">Other optimizations</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#optimized-bottom-up-dp">Optimized Bottom-Up DP</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#monotonic-stacks">Monotonic Stacks</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#problems">Problems</a>
+    </li>
+        </ul>
+    </li>
+        </ul>
     </li>
     <li class="toctree-l2"><a class="reference internal" href="#patterns">Patterns</a>
     </li>
-    <li class="toctree-l2"><a class="reference internal" href="#problems">Problems</a>
+    <li class="toctree-l2"><a class="reference internal" href="#problems_1">Problems</a>
     </li>
     </ul>
                 </li>
@@ -168,23 +180,38 @@ def maximumScore(self, nums: List[int], multipliers: List[int]) -&gt; int:
 <h2 id="strategies">Strategies</h2>
 <h3 id="1-finding-state-variables">1. Finding state variables</h3>
 <h3 id="2-defining-the-recusion-relation">2. Defining the recusion relation</h3>
+<ul>
+<li>Simplify the basecase.</li>
+<li>ALWAYS VERIFY THE BASE CASE.</li>
+</ul>
 <h3 id="3-finalizing-the-top-down-approach">3. Finalizing the top-down approach</h3>
+<ul>
+<li>Using Python, if the recusion relation is found, then it is pretty much done with top-down approach (via <code>cache</code> in <code>functools</code>).</li>
+</ul>
 <h3 id="4-selecting-data-structures-for-memorization">4. Selecting data structures for memorization</h3>
 <h3 id="5-finding-the-computation-path">5. Finding the computation path</h3>
 <h3 id="6-finalizing-the-bottom-up-approach">6. Finalizing the bottom-up approach</h3>
 <h2 id="other-optimizations">Other optimizations</h2>
+<h3 id="optimized-bottom-up-dp">Optimized Bottom-Up DP</h3>
+<h3 id="monotonic-stacks">Monotonic Stacks</h3>
+<ul>
+<li><a href="https://leetcode.com/problems/minimum-difficulty-of-a-job-schedule/description/">Minimum Difficulty of a Job Schedule</a></li>
+</ul>
+<h4 id="problems">Problems</h4>
 <h2 id="patterns">Patterns</h2>
-<h2 id="problems">Problems</h2>
+<h2 id="problems_1">Problems</h2>
 <ul>
 <li><a href="https://leetcode.com/problems/longest-increasing-subsequence">Longest Increasing Subsequence</a></li>
 <li><a href="https://leetcode.com/problems/delete-and-earn/description/">Delete and Earn</a></li>
 <li><a href="../mrp/">Maximal Square</a></li>
+<li><a href="https://leetcode.com/problems/minimum-difficulty-of-a-job-schedule/description/">Minimum Difficulty of a Job Schedule</a></li>
+<li><a href="https://leetcode.com/problems/coin-change/description/">Coin Change</a></li>
 </ul>
               
             </div>
           </div><footer>
     <div class="rst-footer-buttons" role="navigation" aria-label="Footer Navigation">
-        <a href="../stacks/" class="btn btn-neutral float-left" title="Stacks"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="../pq/" class="btn btn-neutral float-left" title="Priority Queues"><span class="icon icon-circle-arrow-left"></span> Previous</a>
         <a href="../mrp/" class="btn btn-neutral float-right" title="Maximal Rectangle Problem">Next <span class="icon icon-circle-arrow-right"></span></a>
     </div>
 
@@ -208,7 +235,7 @@ def maximumScore(self, nums: List[int], multipliers: List[int]) -&gt; int:
   <span class="rst-current-version" data-toggle="rst-current-version">
     
     
-      <span><a href="../stacks/" style="color: #fcfcfc">&laquo; Previous</a></span>
+      <span><a href="../pq/" style="color: #fcfcfc">&laquo; Previous</a></span>
     
     
       <span><a href="../mrp/" style="color: #fcfcfc">Next &raquo;</a></span>

@@ -44,9 +44,9 @@
                 <li class="toctree-l1"><a class="" href="https://ltdk.me">My Blog</a>
                 </li>
               </ul>
-              <p class="caption"><span class="caption-text">Basic</span></p>
+              <p class="caption"><span class="caption-text">Data Structures</span></p>
               <ul class="current">
-                  <li class="toctree-l1 current"><a class="reference internal current" href="./">Arrays</a>
+                  <li class="toctree-l1 current"><a class="reference internal current" href="#">Arrays</a>
     <ul class="current">
     <li class="toctree-l2"><a class="reference internal" href="#traversal">Traversal</a>
         <ul>
@@ -71,6 +71,8 @@
                   <li class="toctree-l1"><a class="reference internal" href="../llists/">Linked Lists</a>
                   </li>
                   <li class="toctree-l1"><a class="reference internal" href="../stacks/">Stacks</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../pq/">Priority Queues</a>
                   </li>
               </ul>
               <ul>
@@ -104,7 +106,7 @@
         <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
   <ul class="wy-breadcrumbs">
     <li><a href=".." class="icon icon-home" aria-label="Docs"></a></li>
-          <li class="breadcrumb-item">Basic</li>
+          <li class="breadcrumb-item">Data Structures</li>
       <li class="breadcrumb-item active">Arrays</li>
     <li class="wy-breadcrumbs-aside">
     </li>
@@ -145,7 +147,22 @@
 <li><a href="https://leetcode.com/problems/move-zeroes">Move Zeroes</a></li>
 <li><a href="https://leetcode.com/problems/image-smoother/">Image Smoother</a></li>
 </ul>
-<h2 id="related-problems">Related Problems</h2>
+<h2 id="sliding-windows">Sliding Windows</h2>
+<h3 id="patterns">Patterns</h3>
+<ul>
+<li>Problems related to counting the number of subarray sastifying some conditions.</li>
+</ul>
+<p>To count number of subarray inside the range <code>[left, right]</code>, number of subarrays ending at <code>right</code>:</p>
+<pre><code>cnt = right - left + 1
+</code></pre>
+<ul>
+<li>May need a dict to hold some statistics of the subarray instead of re-computing for each subarray (normally takes <code>O(N^3)</code>).</li>
+</ul>
+<h2 id="problems_2">Problems</h2>
+<ul>
+<li><a href="https://leetcode.com/problems/continuous-subarrays/description/">Continuous Subarrays</a></li>
+</ul>
+<h2 id="related-topics">Related Topics</h2>
 <ul>
 <li><a href="../ps/">Prefix Sum</a></li>
 </ul>
