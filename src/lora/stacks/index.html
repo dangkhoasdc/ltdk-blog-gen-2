@@ -50,11 +50,15 @@
                   </li>
                   <li class="toctree-l1"><a class="reference internal" href="../llists/">Linked Lists</a>
                   </li>
-                  <li class="toctree-l1 current"><a class="reference internal current" href="#">Stacks</a>
+                  <li class="toctree-l1 current"><a class="reference internal current" href="./">Stacks</a>
     <ul class="current">
     <li class="toctree-l2"><a class="reference internal" href="#nested-objects">Nested Objects</a>
     </li>
     <li class="toctree-l2"><a class="reference internal" href="#nearest-smaller-values">Nearest Smaller Values</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#problems">Problems</a>
+    </li>
+        </ul>
     </li>
     <li class="toctree-l2"><a class="reference internal" href="#related-topics">Related topics</a>
     </li>
@@ -107,6 +111,24 @@
                 <h1 id="stacks">Stacks</h1>
 <h2 id="nested-objects">Nested Objects</h2>
 <h2 id="nearest-smaller-values">Nearest Smaller Values</h2>
+<pre><code class="language-python">stack = []
+res = []
+for item in collection:
+    while stack and stack[-1] &gt;= item:
+        # pop recent items that is larger than the current one
+        stack.pop()
+
+    if stack: # this is the nearest smaller item (to the left)
+        res.append(stack[-1])
+    else: # there is no such item
+        res.append(None)
+
+    stack.append(item)
+</code></pre>
+<h3 id="problems">Problems</h3>
+<ul>
+<li><a href="https://leetcode.com/problems/final-prices-with-a-special-discount-in-a-shop/description/">Final Prices With a Special Discount in a Shop</a></li>
+</ul>
 <h2 id="related-topics">Related topics</h2>
 <ul>
 <li><a href="../dfs/">Depth First Search</a></li>

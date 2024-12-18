@@ -52,7 +52,7 @@
                   </li>
                   <li class="toctree-l1"><a class="reference internal" href="../stacks/">Stacks</a>
                   </li>
-                  <li class="toctree-l1 current"><a class="reference internal current" href="#">Priority Queues</a>
+                  <li class="toctree-l1 current"><a class="reference internal current" href="./">Priority Queues</a>
     <ul class="current">
     <li class="toctree-l2"><a class="reference internal" href="#data-structures">Data Structures</a>
         <ul>
@@ -120,10 +120,15 @@
 heap = []
 item = None
 
+pq.heapify(heap)
+
 min_item = pq.heappop(heap)
 pq.heappush(heap, item)
 
 </code></pre>
+<ul>
+<li><code>heapify</code> is <code>O(N)</code>, so use it instead of gradually putting items into the heap via <code>push</code> (<code>O(Nlg N)</code>).</li>
+</ul>
 <h2 id="patterns">Patterns</h2>
 <ul>
 <li>Most likely related to the greedy approach.</li>
